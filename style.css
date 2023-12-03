@@ -1,0 +1,771 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    --main-bg-color: #000;
+    --white-color: #fff;
+    --gold-color: #D4C17F;
+    --grey-color: #242B33;
+    box-sizing: border-box;
+    max-width: 100%;
+}
+html {
+    scroll-behavior: smooth;  /* для плавной работы якорей */
+}
+body {
+    background-color: var(--grey-color);
+    color: var(--white-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER START */
+header {
+    background: linear-gradient(180deg, #242b33 11.98%, rgba(45, 52, 60, 0.38) 51.04%, #242b33 92.19%0), url(img/header/header-bg.jpg);
+    width: 100%;
+    min-height: 840px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header__top .container {
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__top .container .header__logo img {
+    position: relative;
+}
+
+.header__top .container .header__nav nav .nav__list li {
+    list-style: none;
+}
+
+.header__top .container .header__nav nav .nav__list li a {
+    color: var(--white-color);
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.header__top .container .header__nav nav .nav__list li a:hover {
+    color: var(--gold-color);
+}
+
+.header__top .container .header__nav nav .nav__list {
+    display: flex;
+    flex-direction: row;
+}
+.toggler {display: none;}
+
+
+.header__title {
+    color: var(--gold-color);
+    font-size: 48px;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+.header__title h1 {
+    padding: 4% 0;
+}
+
+.header__footer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+.header__footer .text-right a {
+    padding-right: 60px;
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.header__footer .text-right a:hover {
+    color: var(--gold-color);
+
+}
+
+.header__footer .text-right .info--map {
+    background-image: url(img/header/map.svg);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    background-size: contain;
+}
+
+.header__footer .text-right .info--tel {
+    background-image: url(img/header/phone.svg);
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    background-size: contain;
+}
+
+/* HEADER END */
+
+
+/* BENEFITS START */
+.benefits {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 100px 0;
+}
+
+.benefits .container {
+    display: flex;
+    padding: 0 60px;
+    /* Уменьшаем блок */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.benefits::after {
+    content: "II";
+    left: calc(50% + 460px);
+    transform: translate(-50%, 0%);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    opacity: 0.02;
+    line-height: 1.15;
+    font-size: 400px;
+    font-family: "Playfair Display", serif;
+}
+
+.benefits .container .benefits__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 160px;
+    height: 160px;
+}
+
+.benefits .container .benefits__item p {
+    width: 160px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* BENEFITS END */
+
+/* APARTMENTS START */
+.apartments {
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+}
+
+.apartments::before {
+    content: "III";
+    right: calc(50% + 460px);
+    transform: translate(50%, 0%);
+    position: absolute;
+    top: 40px;
+    z-index: -1;
+    opacity: 0.02;
+    line-height: 1.15;
+    font-size: 400px;
+    font-family: "Playfair Display", serif;
+}
+
+.apartments .container .apartments__title h2 {
+    font-size: 36px;
+    padding: 60px 10px;
+    color: var(--gold-color);
+}
+
+.apartments .container .apartments__cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    z-index: 2;
+    justify-content: center;
+}
+
+.apartments .container .apartments__cards a {
+    /* a class = card */
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+    width: 580px;
+    height: 360px;
+}
+
+.apartments .container .apartments__cards .card .card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+    transform-origin: center center;
+}
+
+.apartments .container .apartments__cards .card span {
+    /* спаном сделал дымку  */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(36, 43, 51, 0) 0%, #242B33 100%);
+}
+
+.apartments .container .apartments__cards .card .card__title {
+    /* текст в карточке */
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    margin: 0;
+    z-index: 3;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.apartments .container .apartments__cards .card::before {
+    /* рамка при наведении, псевдоэлементом и прозрачная*/
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    left: 7%;
+    top: 10%;
+    width: 86%;
+    height: 80%;
+    z-index: 1;
+    border: 3px double rgba(255, 255, 255, 0.4);
+    transition: opacity 0.2s ease-in;
+    opacity: 0;
+    z-index: 2;
+}
+
+.apartments .container .apartments__cards .card:hover::before {
+    /* рамка при наведении, делаем видимую*/
+    opacity: 1;
+}
+
+.apartments .container .apartments__cards .card:hover .card__img {
+    transform: scale(1.2);
+}
+
+.apartments .container .apartments__cards .card:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    /* Добавляем тень с размытием при наведении */
+}
+
+/* APARTMENTS END */
+
+
+/* CTA START */
+.cta {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 120px;
+    background: linear-gradient(180deg, #242B33 10.42%, rgba(36, 43, 51, 0) 50.52%, #242B33 90.1%), linear-gradient(0deg, rgba(36, 43, 51, 0.9), rgba(36, 43, 51, 0.9)), url(img/cta/cta-bg.jpg), #c4c4c4;
+}
+
+.cta .container .cta__title {
+    font-size: 36px;
+    padding: 30px 10px;
+    color: var(--gold-color);
+}
+
+.cta .container .cta__main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cta .container .cta__main .cta__text {
+    display: flex;
+    width: 40%;
+    margin-right: 10%;
+    line-height: 1.8;
+}
+
+.cta .container .cta__main form {
+    display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cta .container .cta__main form .form__input {
+    height: 50px;
+    padding: 12px 42px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in;
+    margin-bottom: 40px;
+}
+
+.form__btn {
+    height: 50px;
+    padding: 12px 52px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    background-color: #D4C17F;
+    transition: background-color 0.2s ease-in;
+    cursor: pointer;
+}
+
+/* CTA END */
+
+
+/* VIDEO START */
+
+.video {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.video::after {
+    content: "IV";
+    left: calc(50% + 380px);
+    transform: translate(-50%, 0%);
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    opacity: 0.02;
+    line-height: 1.15;
+    font-size: 400px;
+    font-family: "Playfair Display", serif;
+}
+
+.video__link::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(36, 43, 51, 0.8);
+    transition: background-color 0.2s ease-in;
+}
+
+.video .container {
+    display: flex;
+    justify-content: center;
+}
+
+.video__icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease-in;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.video__iframe {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* VIDEO END */
+
+/* section-map START */
+.section-map {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 60px 0;
+}
+
+.section-map::before {
+    content: "V";
+    right: calc(50% + 540px);
+    transform: translate(50%, 0%);
+    position: absolute;
+    top: 40px;
+    z-index: -1;
+    opacity: 0.02;
+    line-height: 1.15;
+    font-size: 400px;
+    font-family: "Playfair Display", serif;
+}
+
+.section-map .container .yandexMapContainer {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-map .container .section-map__title h2 {
+    font-size: 36px;
+    padding: 60px 10px;
+    color: var(--gold-color);
+
+}
+
+/* section-map END */
+
+/* FEEDBACK START */
+.feedback {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 60px 0;
+}
+
+.feedback .container .feedback__title h2 {
+    font-size: 36px;
+    padding: 60px 10px;
+    color: var(--gold-color);
+
+}
+
+.feedback .container .feedback__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.feedback .container .feedback__form input {
+    height: 50px;
+    padding: 12px 42px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in;
+    margin-bottom: 40px;
+}
+
+/* FEEDBACK END */
+
+
+/* FOOTER START */
+footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-color: #2D343C;
+    padding: 60px 0;
+}
+
+footer li {
+    list-style: none;
+    padding: 6px 0;
+}
+
+footer li a {
+    color: var(--gold-color);
+    text-decoration: none;
+}
+
+footer .container .footer__main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer .container .footer__main .footer__nav .footer__nav-list li a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: 200;
+}
+
+footer .container .footer__main .footer__nav .footer__nav-list li a:hover {
+    color: var(--gold-color);
+    transition: color 0.2s ease-in;
+}
+
+footer .container .footer__main .footer__address {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .container .footer__main .footer__address .footer__socials {
+    display: flex;
+    flex-direction: row;
+}
+
+footer .container .footer__main .footer__address .footer__socials li {
+    padding: 6px;
+}
+
+footer .container .footer__main .footer__address .footer__socials li a img:hover {
+    filter: sepia(80%) saturate(2000%) hue-rotate(15deg) brightness(1.5) contrast(1);
+}
+
+/* FOOTER END */
+
+@media screen and (max-width:1250px) {
+    .container {
+        max-width: 1000px;
+
+    }
+
+    .apartments .container .apartments__cards a {
+        width: 40%;
+        height: 40%;
+    }
+
+    .cta .container .cta__main form {
+        justify-content: flex-end;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .benefits::after {
+        left: calc(50% + 260px);
+    }
+
+    .video::after {
+        left: calc(50% + 180px);
+    }
+}
+
+
+@media screen and (max-width:800px) {    
+/* Стили для чекбокса, который будет использоваться для переключения состояния меню */
+.toggler {
+    display: block;
+    z-index: 2;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    opacity: 0;
+}
+
+/* Стили для общего контейнера гамбургера */
+.hamburger {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100px;
+    width: 100px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+/* Стили для линий гамбургера */
+.hamburger > div {
+    position: relative;
+    top: 0;
+    left: 0;
+    background: var(--white-color);
+    height: 2px;
+    width: 60%;
+    transition: all 0.4s ease;
+}
+
+/* Стили для псевдоэлементов, создающих верхнюю и нижнюю части линии гамбургера */
+.hamburger > div::before,
+.hamburger > div::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    background: var(--white-color);
+    width: 100%;
+    height: 2px;
+    transition: all 0.4s ease;
+}
+
+/* Позиционирование нижней части линии гамбургера */
+.hamburger > div::after {
+    top: 10px;
+}
+
+/* Стили для изменения внешнего вида гамбургера в развернутом состоянии */
+.toggler:checked + .hamburger > div {
+    background: transparent;
+}
+
+.toggler:checked + .hamburger > div::before {
+    top: 0;
+    transform: rotate(45deg);
+    background: var(--white-color);
+}
+
+.toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(135deg);
+    background: var(--white-color);
+}
+
+/* Стили для бокового меню */
+.nav {
+    background: var(--grey-color);
+    width: 0;
+    height: 50vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden; /* Добавлено для избежания видимости скрытых элементов */
+}
+
+/* Развертывание бокового меню при активации чекбокса */
+.toggler:checked + .hamburger + .nav {
+    width: 100%;
+}
+
+/* Стили для списка внутри бокового меню */
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Это выровняет элементы в столбце слева */
+    padding-left: 10px;
+    opacity: 0; /* Добавлено начальное значение непрозрачности */
+    transform: translateY(-20px); /* Добавлено начальное значение translateY */
+    transition: opacity 0.4s ease, transform 0.4s ease; /* Анимация для opacity и transform */
+}
+
+/* Развертывание списка при активации чекбокса */
+.toggler:checked + .hamburger + .nav .nav__list {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    flex-direction: column;
+    border-bottom: 2px solid var(--gold-color);
+}
+
+/* Стили для элементов списка */
+.nav__list li {
+    list-style: none;
+    padding: 0.5rem;
+}
+
+/* Стили для ссылок внутри списка */
+.nav__list a {
+    color: black;
+    text-decoration: none;
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Изменение цвета ссылок при наведении в развернутом меню */
+.toggler:checked + .header__nav .nav .nav__list a:hover {
+    color: var(--gold-color);
+}
+}
+
+@media screen and (max-width:700px){
+    .benefits::after {
+        left: calc(50%);
+    }
+    .video::after {
+        left: calc(50% );
+    }
+}
+
+@media screen and (max-width:600px) {
+    .header__title {
+        font-size: 36px;
+    }
+    
+    .apartments .container .apartments__title h2{
+        display: flex;justify-content: center;
+    }
+    .apartments .container .apartments__cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .apartments .container .apartments__cards a {
+        width: 80%;
+        height: 80%;
+    }
+.cta {padding: 40px;}
+    .cta .container .cta__title {
+        text-align: center;
+        font-size: 20px;
+    }
+    .cta .container .cta__main {
+        flex-direction: column;
+    }
+    .cta .container .cta__main .cta__text {
+        width: 100%;
+        justify-content: center;
+        margin: 0;text-align: center;
+    }
+    .cta .container .cta__main form {
+        width: 100%;
+        justify-content: center;
+    }
+    footer .container .footer__main .footer__address {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .header__top .container .header__nav nav .nav__list li a{
+        font-size: 20px;
+        padding: 0;
+    }
+    .header__title {
+        font-size: 20px;
+    }
+    .header__footer .text-right a{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+.feedback .container .feedback__form {
+    justify-content: center;
+}
+.feedback .container .feedback__title{
+    display: flex;
+    justify-content: center;
+}
+.video::after {
+    display: none;;
+}
+
+footer{
+    padding: 4px;
+}
+}
